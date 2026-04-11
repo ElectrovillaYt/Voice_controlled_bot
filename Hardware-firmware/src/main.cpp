@@ -1,4 +1,4 @@
-// ESP8266 - NodeMCU 1.0 Firmware for Voice Controlled Pic & Place Robot.
+// ESP8266 - NodeMCU 1.0 Firmware for Voice Controlled Pick & Place Robot.
 #include <Arduino.h>
 #include <ESP8266WiFi.h>
 #include <Servo.h>
