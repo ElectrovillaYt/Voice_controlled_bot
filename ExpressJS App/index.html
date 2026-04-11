@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pick And Place Robot</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <h1>Pick And Place Robot</h1>
+    <h2>Servo Controls</h2>
+    <div class="servo-controls">
+        <!-- Gripper Servo Controls-->
+        <label>Gripper Servo</label>
+        <!-- Slider sends values 0-80. 0 = open, 80 = closed -->
+        <input type="range" min="0" max="80" value="0" oninput="adjustServoAngle(2,this.value)" />
+
+        <!-- Elbow Servo Controls-->
+        <label>Elbow Servo</label>
+        <!-- Slider sends values 0-135. With the new mapping: 0 -> 45°, 135 -> 176° -->
+        <input type="range" min="0" max="135" value="0" oninput="adjustServoAngle(1,this.value)" />
+    </div>
+
+    <div class="joystick-nav">
+        <h2>Joystick Control</h2>
+        <span id="mic-holder">
+            <button type="button" id="mic" class="mic"></button>
+        </span>
+    </div>
+    <div class="joystick-container" id="joystick-container">
+        <div class="arrow arrow-up">▲</div>
+        <div class="arrow arrow-down">▲</div>
+        <div class="arrow arrow-left">▲</div>
+        <div class="arrow arrow-right">▲</div>
+        <div class="joystick" id="joystick"></div>
+    </div>
+    <div class="speed-control">
+        <label for="speed">Speed Control</label><br>
+        <input type="range" id="speed" min="0" max="100" value="50" oninput="adjustSpeed(this.value)">
+        <br>
+        <span id="speedValue">0</span>
+    </div>
+    <script src="/js/script.js"></script>
+</body>
+
+</html>
