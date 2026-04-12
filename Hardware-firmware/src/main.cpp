@@ -158,7 +158,7 @@ void processReq(char *cmd)
         motor.moveRight();
       else if (strcmp(value, "-2") == 0)
         motor.moveLeft();
-      else
+      else if (strcmp(value, "0") == 0)
         motor.stopBotMotion();
     }
     else if (strcmp(alias, "speed") == 0)
