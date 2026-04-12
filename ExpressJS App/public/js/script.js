@@ -44,7 +44,7 @@ recognition.onresult = (event) => {
         sendDirectionCommand(direction)
     }
 };
-recognition.onend() = () => {
+recognition.onend = () => {
         if(isMic_ON) {
             recognition.start();  
         }
