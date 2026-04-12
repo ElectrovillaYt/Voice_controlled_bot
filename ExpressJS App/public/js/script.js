@@ -36,18 +36,25 @@ recognition.onresult = (event) => {
     const transcript = (event.results[event.results.length - 1][0].transcript)?.replace('.', "")?.replace("?", "").toLowerCase();
     if (transcript?.length > 0) {
         let direction = 0
-        if (transcript.includes("forward") || transcript.includes("ahead")) direction = 1;
-        else if (transcript.includes("back") || transcript.includes("reverse")) direction = -1;
-        if (transcript.includes("left") || transcript.includes("ahead")) direction = -2;
-        else if (transcript.includes("right") || transcript.includes("reverse")) direction = 2;
+        if (transcript.includes("forward") || transcript.includes("ahead") || transcript.includes("front")) direction = 1;
+        else if (transcript.includes("back") || transcript.includes("reverse") || transcript.includes("backward")) direction = -1;
         else if (transcript.includes("stop") || transcript.includes("break")) direction = 0;
+        else if (transcript.includes("right")) direction = 2;
+        else if (transcript.includes("left")) direction = -2;
+        else if (transcript.includes("exit")) {
+            isMic_ON = false;
+            changeMicState();
+        }
         sendDirectionCommand(direction)
     }
 };
+
 recognition.onend = () => {
-        if(isMic_ON) {
-            recognition.start();  
-        }
+    if (isMic_ON) {
+        setTimeout(() =>
+            recognition.start()
+            , 150); //150ms delay between restart "onend" - event
+    }
 }
 
 recognition.onerror = (event) => alert(`Speech recognition error: ${event.error}`);
@@ -81,7 +88,12 @@ document.getElementById("mic").addEventListener('click', (e) => {
 
 const sendCommand = async (url) => {
     try {
+        // console.log(url); // debug log for url params
         const response = await fetch(url);
+        const res = await response.json()
+        if (!response.ok) {
+            throw new Error(res);
+        }
     }
     catch (e) {
         console.error(e?.message ?? e?.error ?? e);
