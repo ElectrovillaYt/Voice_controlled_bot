@@ -44,6 +44,12 @@ recognition.onresult = (event) => {
         sendDirectionCommand(direction)
     }
 };
+recognition.onend() = () => {
+        if(isMic_ON) {
+            recognition.start();  
+        }
+}
+
 recognition.onerror = (event) => alert(`Speech recognition error: ${event.error}`);
 
 const changeMicState = () => {
