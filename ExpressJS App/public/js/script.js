@@ -189,8 +189,8 @@ const setupJoystick = () => {
 
 document.addEventListener("DOMContentLoaded", () => {
     setupJoystick();
-    document.getElementById("speed").value = "100";
-    document.getElementById("speedValue").innerText = "100%";
+    document.getElementById("speed").value = "0";
+    document.getElementById("speedValue").innerText = "0%";
     // Initialize both servos to their rest positions.
     sendCommand('/servo?s=1&a=0');
     sendCommand('/servo?s=2&a=0');
