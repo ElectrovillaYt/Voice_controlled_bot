@@ -8,7 +8,7 @@ Feel free to give feedback and try this by yourself, Keep building! :)
 
 
 ## Steps to run Server Locally
- # Go to Express JS App Dir
- # install deps using - npm install
- # run server locally using- node ./index.js
+ ### Go to Express JS App Dir
+ ### install deps using - npm install
+ ### run server locally using- node ./index.js
  
