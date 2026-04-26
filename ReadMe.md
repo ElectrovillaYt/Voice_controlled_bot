@@ -8,7 +8,7 @@ Feel free to give feedback and try this by yourself, Keep building! :)
 
 
 ## Steps to run Server Locally
- ### Go to Express JS App Dir
- ### install deps using - npm install
- ### run server locally using- node ./index.js
- 
+ - Go to Express JS App Dir
+ - install deps using - npm install
+ -  run server locally using- node ./index.js
+ - paste the LAN ip of tge device in desgined field in Hardware firware with the Post 5000 at the end and you are good to go!
