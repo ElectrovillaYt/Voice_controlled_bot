@@ -11,4 +11,4 @@ Feel free to give feedback and try this by yourself, Keep building! :)
  - Go to Express JS App Dir
  - install deps using - npm install
  -  run server locally using- node ./index.js
- - paste the LAN ip of tge device in desgined field in Hardware firware with the Post 5000 at the end and you are good to go!
+ - paste the LAN ip of the device [PC] in desgnelated field in Hardware firmware with the PORT 5000 at the end of tge up address and you are good to go, eg: 192.168.1.4:5000
